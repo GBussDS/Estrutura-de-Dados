@@ -9,6 +9,8 @@ int Fibonacci(int iIteracoes);
 int abs(int iNum);
 int fatorial(int iValor);
 int somaProgressaoAritmetica(int iNumeroTermos, int iPrimeiroTermo, int iUltimoTermo);
+int numeroDeDigitos(int iValor);
+
 
 int main() 
 {
@@ -25,6 +27,11 @@ int main()
 
     iSomaProgressao = somaProgressaoAritmetica(iNumeroTermos, iPrimeiroTermo, iUltimoTermo);
     cout << "Soma da PA com " << iNumeroTermos << " termos, sendo o primeiro " << iPrimeiroTermo << " e o último " << iUltimoTermo << ": " << iSomaProgressao << endl;
+
+    cout << "\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n" << endl;
+    
+    int iTeste = 1123123;
+    cout << numeroDeDigitos(iTeste) << endl;
     
     return 0;
 }
@@ -77,4 +84,21 @@ int Fibonacci(int iIteracoes){
   }
 
   return iResultado;
+}
+
+int numeroDeDigitos(int iValor)
+{
+    int iDigitos = 0;
+    int iResultadoDiv = 1;
+    int iBaseDez = 10;
+    
+    for (int i = 1; iResultadoDiv > 0; i++)
+    {
+        iResultadoDiv = iValor / iBaseDez;
+        iDigitos = i;
+        
+        iBaseDez = iBaseDez * 10;
+    }
+    
+    return iDigitos;
 }
