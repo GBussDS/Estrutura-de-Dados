@@ -35,6 +35,11 @@ int main()
 
     cout << "\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n" << endl;
     
+    int iPassos = 6;
+    cout << iPassos << "º termo da sequência de fibonacci: " << fibonacci(iPassos) << endl;
+    
+    cout << "\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n" << endl;
+    
     int iTeste = 1123123;
     cout << "Número de dígitos de "<< iTeste << ": " << numeroDeDigitos(iTeste) << endl;
     
@@ -75,7 +80,7 @@ int somaProgressaoAritmetica(int iNumeroTermos, int iPrimeiroTermo, int iUltimoT
 int fibonacci(int iIteracoes){
   // se for apenas um passo retornamos 0...
   if (iIteracoes == 1){
-    return 0;
+    return 1;
   }
   
   // senão fazemos as iterações parando um passo antes (para compensar
