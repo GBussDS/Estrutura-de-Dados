@@ -6,7 +6,8 @@ using std::endl;
 using std::string;
 
 int abs(int iNum);
-int Fatorial(int iValor);
+int fatorial(int iValor);
+int somaProgressaoAritmetica(int iNumeroTermos, int iPrimeiroTermo, int iUltimoTermo);
 
 int main() 
 {
@@ -14,8 +15,15 @@ int main()
     int iValorAbsoluto = abs(iValor);
     cout << "Valor absoluto de " << iValor << ": " << iValorAbsoluto << endl;
 
+    cout << "\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n" << endl;
+
     int iValorFatorial = 5;
     cout << Fatorial(iValorFatorial) << endl;
+
+    cout << "\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n" << endl;
+
+    iSomaProgressao = somaProgressaoAritmetica(iNumeroTermos, iPrimeiroTermo, iUltimoTermo);
+    cout << "Soma da PA com " << iNumeroTermos << " termos, sendo o primeiro " << iPrimeiroTermo << " e o último " << iUltimoTermo << ": " << iSomaProgressao << endl;
     
     return 0;
 }
@@ -30,7 +38,7 @@ int abs(int iNum)
     return iNum;
 }
 
-int Fatorial(int iValor)
+int fatorial(int iValor)
 {
     int iResultado = 1;
     
@@ -40,4 +48,13 @@ int Fatorial(int iValor)
     }
     
     return iResultado;
+}
+
+int somaProgressaoAritmetica(int iNumeroTermos, int iPrimeiroTermo, int iUltimoTermo)
+{
+    int iSoma;
+    
+    iSoma = (iNumeroTermos / 2) * (iPrimeiroTermo + iUltimoTermo);
+    
+    return iSoma;
 }
