@@ -5,8 +5,8 @@ using std::cout;
 using std::endl;
 using std::string;
 
-int Fibonacci(int iIteracoes);
-int abs(int iNum);
+int fibonacci(int iIteracoes);
+int absoluto(int iNum);
 int fatorial(int iValor);
 int somaProgressaoAritmetica(int iNumeroTermos, int iPrimeiroTermo, int iUltimoTermo);
 int numeroDeDigitos(int iValor);
@@ -15,28 +15,33 @@ int numeroDeDigitos(int iValor);
 int main() 
 {
     int iValor = -25;
-    int iValorAbsoluto = abs(iValor);
+    int iValorAbsoluto = absoluto(iValor);
     cout << "Valor absoluto de " << iValor << ": " << iValorAbsoluto << endl;
 
     cout << "\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n" << endl;
 
     int iValorFatorial = 5;
-    cout << Fatorial(iValorFatorial) << endl;
+    cout << "Fatorial de " << iValorFatorial << ": " << fatorial(iValorFatorial) << endl;
 
     cout << "\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n" << endl;
 
+    int iNumeroTermos = 10;
+    int iPrimeiroTermo = 2;
+    int iUltimoTermo = 200;
+    int iSomaProgressao;
+    
     iSomaProgressao = somaProgressaoAritmetica(iNumeroTermos, iPrimeiroTermo, iUltimoTermo);
     cout << "Soma da PA com " << iNumeroTermos << " termos, sendo o primeiro " << iPrimeiroTermo << " e o último " << iUltimoTermo << ": " << iSomaProgressao << endl;
 
     cout << "\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n" << endl;
     
     int iTeste = 1123123;
-    cout << numeroDeDigitos(iTeste) << endl;
+    cout << "Número de dígitos de "<< iTeste << ": " << numeroDeDigitos(iTeste) << endl;
     
     return 0;
 }
 
-int abs(int iNum)
+int absoluto(int iNum)
 {
     if (iNum < 0)
     {
@@ -67,7 +72,7 @@ int somaProgressaoAritmetica(int iNumeroTermos, int iPrimeiroTermo, int iUltimoT
     return iSoma;
 }
 
-int Fibonacci(int iIteracoes){
+int fibonacci(int iIteracoes){
   // se for apenas um passo retornamos 0...
   if (iIteracoes == 1){
     return 0;
