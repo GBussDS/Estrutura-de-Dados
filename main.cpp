@@ -6,7 +6,7 @@ using std::endl;
 using std::string;
 
 int fibonacci(int iIteracoes);
-int absoluto(int iNum);
+int& absoluto(int& irefNum);
 int fatorial(int iValor);
 int somaProgressaoAritmetica(int iNumeroTermos, int iPrimeiroTermo, int iUltimoTermo);
 int numeroDeDigitos(int iValor);
@@ -15,8 +15,8 @@ int numeroDeDigitos(int iValor);
 int main() 
 {
     int iValor = -25;
-    int iValorAbsoluto = absoluto(iValor);
-    cout << "Valor absoluto de " << iValor << ": " << iValorAbsoluto << endl;
+    int irefValorAbsoluto = absoluto(iValor);
+    cout << "Valor absoluto: " << irefValorAbsoluto << endl;
 
     cout << "\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n" << endl;
 
@@ -46,14 +46,14 @@ int main()
     return 0;
 }
 
-int absoluto(int iNum)
+int& absoluto(int& irefNum)
 {
-    if (iNum < 0)
+    if (irefNum < 0)
     {
-        iNum = (-1) * iNum;
+        irefNum = (-1) * irefNum;
     }
     
-    return iNum;
+    return irefNum;
 }
 
 int fatorial(int iValor)
